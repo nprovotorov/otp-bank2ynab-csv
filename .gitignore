@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# ynab
+ynab.csv
+
 # C extensions
 *.so
 
