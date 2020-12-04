@@ -50,8 +50,12 @@ with open("ynab.csv", "w", encoding='utf-8') as f:
 
         f.write((operation["merchantName"] or "None") + ",")
 
+        descr = operation["description"]
+        if descr is None:
+            descr = ""
+
         f.write("[{0}]: {1},".format(
-            operation["merchantName"] or operation["nomination"], operation["description"].replace(",", "_")))
+            operation["merchantName"] or operation["nomination"], descr.replace(",", "_")))
 
         f.write(operation["operation"]["amount"])
 
